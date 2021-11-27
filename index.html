@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="service.js"></script>
+</head>
+
+<body ng-controller="controlador as vm" ng-init="vm.init()">
+  <button type="button" ng-click="vm.addFile()">Confirm file</button>
+  <input type="file" id="arquivo" />
+  <hr>
+  <p ng-if="vm.isEnviado">Pessoa enviada</p>
+  <div ng-if="vm.isImagem">
+    <p>O arquivo é uma imagem:</p>
+    <img data-ng-src="{{vm.pessoa.imagem}}" alt="imagem">
+  </div>
+</body>
+
+</html>
